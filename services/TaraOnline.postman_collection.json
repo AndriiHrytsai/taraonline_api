@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "56f730f0-3a45-4bef-8db8-f32b78e97984",
+		"name": "TaraOnline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTE3Mjk1Y2ZkY2ZhODAxNTdjZDQxZiIsImlhdCI6MTYzMjcyODkzMSwiZXhwIjoxNjMyODE1MzMxfQ.-DvcftVEKZKA-XqAOnp49g4zxff9woSYT_G7NCQ8U_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation AddProduct(\n        $data: ProductInput\n    ){\n        createProduct(\n            data: $data\n        ){\n            _id\n        }\n    }",
+						"variables": "{\n    \"data\": {\n        \"title\": \"New product\",\n        \"description\": \"....................................\\n.............................................\\n.............................................\\n.............................................\\n.............................................\",\n        \"city\": \"Vovkiv\"\n  }\n}\n  "
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add betaUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTJlNjQyNDJkNGQ2OWU3MjUyNTZiYiIsImlhdCI6MTYzMjk4ODQ1OCwiZXhwIjoxNjMzMDc0ODU4fQ.eyaHyxxvp75mU_X5fX-q_Ga1foPve6gyeIGDzgCL5t4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation CreateBetaUser(\n        $email: String\n    ){\n        createBetaUser(\n            email: $email\n        ){\n            email\n        }\n    }",
+						"variables": "{\n    \"email\": \"atretiak.work@gmail.com\"\n}\n  "
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign up",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2IxYzIyMzhiZDFiMzhjMzk1Y2ExYyIsImlhdCI6MTYzMTYwNDMwMiwiZXhwIjoxNjMxNjkwNzAyfQ.OPKkCakXKz_9Qd0ry0Ctex-azLbL3TU8oBD7-rx5rZU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation createUser(\n        $email: String!\n        $roleId: String!\n        $username: String!\n        $password: String!\n    ){\n        createUser(\n            email:$email\n            roleId:$roleId\n            username:$username\n            password:$password\n        ){\n            accessToken\n        }\n    }",
+						"variables": "{\n    \"email\":\"atretyak1985@gmail.com\",\n    \"roleId\":\"61404ef56a44c286c6d00293\",\n    \"username\":\"atretyak\",\n    \"password\":\"Welcome123\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query login(\n        $username: String!\n        $password: String!\n    ){\n        login(\n            username: $username,\n            password: $password\n        ){\n            accessToken\n    }\n    }",
+						"variables": "{\n    \"username\":\"atretyak\",\n    \"password\": \"Welcome123\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTJkZTE4YTBkZTE4OWMyN2UzYmQwZiIsImlhdCI6MTYzMjgyMjIyNCwiZXhwIjoxNjMyOTA4NjI0fQ.vrpqKKMfgBS2-7zo65121fJhPM5Kfya_RfHkL1kbwuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getProductStatus(\n        $ _id: ID!\n    ){\n        productStatus(\n            _id: $_id\n        ){\n            name\n        }\n    }",
+						"variables": "{\n    \"_id\":\"6152d1f033ab1b9993b98f99\"\n}\n"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTJlNjQyNDJkNGQ2OWU3MjUyNTZiYiIsImlhdCI6MTYzMjgyMjg1MCwiZXhwIjoxNjMyOTA5MjUwfQ.gwp-q15TO9D8ZB7BP1v8S94lelPUXWO7Ufce1TgzfbM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query getProduct(\n        $ _id: ID!\n    ){\n        product(\n            _id: $_id\n        ){\n            title\n            productType {\n                name\n                value\n            }\n        }\n    }",
+						"variables": "{\n    \"_id\":\"6152e63742d4d69e725256b2\"\n}\n"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign up Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2IxYzIyMzhiZDFiMzhjMzk1Y2ExYyIsImlhdCI6MTYzMTYwNDMwMiwiZXhwIjoxNjMxNjkwNzAyfQ.OPKkCakXKz_9Qd0ry0Ctex-azLbL3TU8oBD7-rx5rZU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation createUser(\n        $email: String!\n        $roleId: String!\n        $username: String!\n        $password: String!\n    ){\n        createUser(\n            email:$email\n            roleId:$roleId\n            username:$username\n            password:$password\n        ){\n            accessToken\n        }\n    }",
+						"variables": "{\n    \"email\":\"atretyak1985@gmail.com\",\n    \"roleId\":\"61404ef56a44c286c6d00293\",\n    \"username\":\"atretyak\",\n    \"password\":\"Welcome123\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

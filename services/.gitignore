@@ -1,0 +1,10 @@
+.idea
+.vscode
+
+.generated-schema.gql
+.dist
+.package-lock.json
+.yarn.lock
+.node_modules
+.schema.graphql
+/generated-schema.gql

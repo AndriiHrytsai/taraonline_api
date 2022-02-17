@@ -1,0 +1,48 @@
+'use strict';
+
+const {products} = require('./products');
+const {product} = require('./product');
+const {paymentType} = require('./paymentType');
+const {paymentTypes} = require('./paymentTypes');
+const {productStatus} = require('./productStatus');
+const {productStatuses} = require('./productStatuses');
+const {productType} = require('./productType');
+const {productTypes} = require('./productTypes');
+const {productSize} = require('./productSize');
+const {productSizes} = require('./productSizes');
+const {productLoad} = require('./productLoad');
+const {productLoads} = require('./productLoads');
+const {productSort} = require('./productSort');
+const {productSorts} = require('./productSorts');
+const {productOptions} = require('./productOptions');
+const {productCustomer} = require('./productCustomer');
+const {productCustomers} = require('./productCustomers');
+const {productPalletType} = require('./productPalletType');
+const {productPalletTypes} = require('./productPalletTypes');
+const {productBrand} = require('./productBrand');
+const {productBrands} = require('./productBrands');
+const {allActivatedList} = require('./allActivatedList');
+
+
+exports.products = products;
+exports.product = product;
+exports.paymentType = paymentType;
+exports.paymentTypes = paymentTypes;
+exports.productStatus = productStatus;
+exports.productStatuses = productStatuses;
+exports.productType = productType;
+exports.productTypes = productTypes;
+exports.productSize = productSize;
+exports.productSizes = productSizes;
+exports.productLoad = productLoad;
+exports.productLoads = productLoads;
+exports.productSort = productSort;
+exports.productSorts = productSorts;
+exports.productOptions = productOptions;
+exports.productCustomer = productCustomer;
+exports.productCustomers = productCustomers;
+exports.productPalletType = productPalletType;
+exports.productPalletTypes = productPalletTypes;
+exports.productBrand = productBrand;
+exports.productBrands = productBrands;
+exports.allActivatedList = allActivatedList;

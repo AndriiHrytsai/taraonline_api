@@ -1,0 +1,84 @@
+{
+  "name": "v2",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot --instances=1 services",
+    "dev1": "env-cmd -f /home/atretyak/environments/api.env moleculer-runner --repl --hot --instances=1 services",
+    "dev_atretiak": "env-cmd -f /Users/atretiak/environments/api.env moleculer-runner --repl --hot --instances=1 services",
+    "prod": "env-cmd -f /root/taraonline/environments/api.env moleculer-runner --repl --hot --instances=1 services",
+    "start": "node bin/runner.js",
+    "cli": "moleculer connect NATS",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint services",
+    "dc:up": "docker-compose up --build -d",
+    "dc:logs": "docker-compose logs -f",
+    "dc:down": "docker-compose down"
+  },
+  "keywords": [
+    "graphql",
+    "apollo-server",
+    "apollo",
+    "moleculer",
+    "microservice",
+    "gateway"
+  ],
+  "author": "",
+  "devDependencies": {
+    "graphql": "^14.6.0",
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
+    "moleculer-cron": "^0.0.2",
+    "moleculer-repl": "^0.6.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.36.1",
+    "apollo-upload-client": "^16.0.0",
+    "aws-sdk": "^2.1003.0",
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.4.1",
+    "dotenv": "^10.0.0",
+    "env-cmd": "^10.1.0",
+    "file-type": "^16.5.3",
+    "graphql-tag": "^2.12.6",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "moleculer": "^0.14.0",
+    "moleculer-apollo-server": "^0.3.5",
+    "moleculer-cronjob": "^0.1.7",
+    "moleculer-db": "^0.8.4",
+    "moleculer-db-adapter-mongo": "^0.4.7",
+    "moleculer-grpc-api": "^1.2.5",
+    "moleculer-io": "^1.1.3",
+    "moleculer-mail": "^1.2.3",
+    "moleculer-web": "^0.9.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.13.7",
+    "nats": "^1.3.2",
+    "nodemailer": "^4.7.0",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-oauth2-refresh": "^2.1.0",
+    "pm2": "^5.1.2",
+    "prettier": "^2.2.1",
+    "protobufjs": "^6.11.2",
+    "redis": "^3.1.2",
+    "socket.io": "^4.2.0",
+    "socket.io-redis": "^6.1.1",
+    "uuid": "^3.4.0"
+  },
+  "engines": {
+    "node": ">= 10.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}

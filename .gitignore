@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules/
+.idea
+.env
+.vscode
+/package-lock.json
+/yarn.lock
+/yarn-error.log
